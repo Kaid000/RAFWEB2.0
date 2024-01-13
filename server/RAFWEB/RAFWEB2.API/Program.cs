@@ -1,8 +1,12 @@
+using RAFWEB2.API.Configuration.Extentions;
+using RAFWEB2.Core.Context;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddControllers();
+builder.Services.AddDbContext<ApplicationContext>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
