@@ -1,12 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RAFWEB2.Data.Models
+﻿namespace RAFWEB2.Data.Models
 {
-    internal class Holiday
+    public class Holiday : BaseEntity
     {
+        public DateTime PerformedDate { get; set; }
+        public StudentOrganization Organization { get; set; }
+        public string Title { get; set; }
+        public string Text { get; set; }
     }
 }

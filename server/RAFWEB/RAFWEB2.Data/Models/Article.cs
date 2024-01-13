@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RAFWEB2.Data.Models
+﻿namespace RAFWEB2.Data.Models
 {
-    internal class Article
+    public class Article : BaseEntity
     {
+        public string Title { get; set; }
+        public string Image { get; set; }
+        public string Text { get; set; }
+        public StudentOrganization Organization { get; set; }
+        public int HolidayId { get; set; }
     }
 }
