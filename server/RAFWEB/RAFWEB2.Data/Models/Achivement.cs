@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace RAFWEB2.Data.Models
+﻿namespace RAFWEB2.Data.Models
 {
-    internal class Achivement
+    public class Achivement : BaseEntity
     {
+        public string Name { get; set; }
+        public string Description { get; set; }
     }
 }

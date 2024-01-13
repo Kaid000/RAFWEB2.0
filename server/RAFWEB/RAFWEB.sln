@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAFWEB2.API", "RAFWEB2.API\RAFWEB2.API.csproj", "{B7B6E44D-75A3-4BE2-8384-CAB4FB7618C6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RAFWEB2.Data", "RAFWEB2.Data\RAFWEB2.Data.csproj", "{C0DDBD42-ECF5-45DC-A7BA-1F3F3DE8C44D}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{B7B6E44D-75A3-4BE2-8384-CAB4FB7618C6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7B6E44D-75A3-4BE2-8384-CAB4FB7618C6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7B6E44D-75A3-4BE2-8384-CAB4FB7618C6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0DDBD42-ECF5-45DC-A7BA-1F3F3DE8C44D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0DDBD42-ECF5-45DC-A7BA-1F3F3DE8C44D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0DDBD42-ECF5-45DC-A7BA-1F3F3DE8C44D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0DDBD42-ECF5-45DC-A7BA-1F3F3DE8C44D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
