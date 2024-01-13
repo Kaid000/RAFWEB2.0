@@ -45,7 +45,6 @@ namespace RAFWEB2.Core.Context
             modelBuilder.Entity<Holiday>().Property(b => b.Title).IsRequired();
 
             modelBuilder.Entity<StudentOrganization>().Property(b => b.Id).IsRequired();
-            modelBuilder.Entity<StudentOrganization>().HasOne(b => b.Contact).WithOne();
             modelBuilder.Entity<StudentOrganization>().Property(b => b.Name).IsRequired();
 
         }
