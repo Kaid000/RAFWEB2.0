@@ -35,6 +35,11 @@ namespace RAFWEB2.Domain.Repositories
             return _set.AsQueryable();
         }
 
+        public async Task<List<T>> GetAll()
+        {
+            return await  _set.ToListAsync();
+        }
+
         public async Task<T> GetByAsync(Expression<Func<T, bool>> expression, params Expression<Func<T, object>>[] includes)
         {
             IQueryable<T> query = _set;
@@ -46,10 +51,11 @@ namespace RAFWEB2.Domain.Repositories
             return await query.FirstOrDefaultAsync(expression);
         }
 
-        public async Task RemoveAsync(T entity)
+        public async Task<T> RemoveAsync(T entity)
         {
             _set.Remove(entity);
             await _db.SaveChangesAsync();
+            return entity;
         }
 
         public async Task<int> RemoveRangeAsync(IEnumerable<T> entities)
@@ -68,7 +74,8 @@ namespace RAFWEB2.Domain.Repositories
         public async Task UpdateRangeAsync(IEnumerable<T> entities)
         {
             _set.UpdateRange(entities);
-            await _context.SaveChangesAsync();
+            await _db.SaveChangesAsync();
         }
+
     }
 }
