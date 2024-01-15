@@ -3,7 +3,7 @@ using RAFWEB2.Core.Context;
 using RAFWEB2.Domain.Repositories.Interfaces;
 using System.Linq.Expressions;
 
-namespace RAFWEB2.Domain.Repositories.BaseRepository
+namespace RAFWEB2.Domain.Repositories
 {
     public class BaseRepository<T> : IBaseRepository<T> where T : class
     {
