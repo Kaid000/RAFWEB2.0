@@ -1,6 +1,5 @@
 ﻿using MediatR;
 using RAFWEB2.Data.Models;
-using RAFWEB2.Domain.Domain.Article.Commands.AddArticle;
 using RAFWEB2.Domain.Repositories.Interfaces;
 
 namespace RAFWEB2.Domain.Domain.Achievement.Commands.AddAchievement

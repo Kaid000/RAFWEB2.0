@@ -4,10 +4,10 @@ using RAFWEB2.Domain.Repositories.Interfaces;
 
 namespace RAFWEB2.Domain.Domain.Achievement.Commands.DeleteAchivement
 {
-    public class DeleteArticleCommandHandler : IRequestHandler<DeleteAchievementCommand, Achivement>
+    public class DeleteAchivementCommandHandler : IRequestHandler<DeleteAchievementCommand, Achivement>
     {
         private readonly IAchievementRepository _repo;
-        public DeleteArticleCommandHandler(IAchievementRepository repo)
+        public DeleteAchivementCommandHandler(IAchievementRepository repo)
         {
             _repo = repo;
         }
