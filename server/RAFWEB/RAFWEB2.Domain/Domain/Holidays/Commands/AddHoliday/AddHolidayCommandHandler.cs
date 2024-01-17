@@ -4,16 +4,16 @@ using RAFWEB2.Domain.Repositories.Interfaces;
 
 namespace RAFWEB2.Domain.Domain.Holidays.Commands.CreateHoliday
 {
-    public class CreateHolidayCommandHandler : IRequestHandler<CreateHolidayCommand, Holiday>
+    public class AddHolidayCommandHandler : IRequestHandler<AddHolidayCommand, Holiday>
     {
         private readonly IHolidayRepository _repo;
 
-        public CreateHolidayCommandHandler(IHolidayRepository repo) 
+        public AddHolidayCommandHandler(IHolidayRepository repo) 
         { 
             _repo = repo; 
         }
 
-        public async Task<Holiday> Handle(CreateHolidayCommand request, CancellationToken cancellationToken)
+        public async Task<Holiday> Handle(AddHolidayCommand request, CancellationToken cancellationToken)
         {
             return await _repo.CreateAsync(request.Holiday);
         }

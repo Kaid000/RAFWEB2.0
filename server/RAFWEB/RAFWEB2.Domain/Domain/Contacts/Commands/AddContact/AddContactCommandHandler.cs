@@ -4,16 +4,16 @@ using RAFWEB2.Domain.Repositories.Interfaces;
 
 namespace RAFWEB2.Domain.Domain.Contacts.Commands.CreateContact
 {
-    public class CreateContactCommandHandler : IRequestHandler<CreateContactCommand, ContactInfo>
+    public class AddContactCommandHandler : IRequestHandler<AddContactCommand, ContactInfo>
     {
         private readonly IContactInfoRepository _repo;
 
-        public CreateContactCommandHandler(IContactInfoRepository repo)
+        public AddContactCommandHandler(IContactInfoRepository repo)
         {
             _repo = repo;
         }
 
-        public async Task<ContactInfo> Handle(CreateContactCommand request, CancellationToken cancellationToken)
+        public async Task<ContactInfo> Handle(AddContactCommand request, CancellationToken cancellationToken)
         {
             return await _repo.CreateAsync(request.ContactInfo);
         }
