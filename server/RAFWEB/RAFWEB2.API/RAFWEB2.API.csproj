@@ -17,6 +17,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RAFWEB2.Core\RAFWEB2.Core.csproj" />
+    <ProjectReference Include="..\RAFWEB2.Domain\RAFWEB2.Domain.csproj" />
   </ItemGroup>
 
 </Project>
