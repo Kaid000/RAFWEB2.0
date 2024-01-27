@@ -12,7 +12,9 @@ namespace RAFWEB2.Domain.Repositories.Interfaces
 
         Task UpdateRangeAsync(IEnumerable<T> entities);
 
-        Task RemoveAsync(T entity);
+        Task<T> RemoveAsync(T entity);
+
+        Task<List<T>> GetAll();
 
         Task<int> RemoveRangeAsync(IEnumerable<T> entities);
 
