@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using RAFWEB2.Data.Models;
 using RAFWEB2.Domain.Mapping.Achievements;
 using RAFWEB2.Domain.Mapping.Contacts;
 using RAFWEB2.Domain.Mapping.Holidays;
@@ -29,3 +28,4 @@ namespace RAFWEB2.API.Configuration.Extentions
             return services;
         }
     }
+}

@@ -78,6 +78,7 @@ builder.Services.AddMediatR(x =>
     x.RegisterServicesFromAssemblies(typeof(GetHolidayByIdQuery).Assembly, typeof(GetHolidayByIdQueryHandler).Assembly);
 });
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
+builder.Services.AddAutoMapper();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
