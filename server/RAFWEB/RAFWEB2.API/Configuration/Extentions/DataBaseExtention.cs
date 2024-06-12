@@ -4,7 +4,6 @@ using RAFWEB2.Core.Context;
 namespace RAFWEB2.API.Configuration.Extentions
 {
     public static class DataBaseExtension
-
     {
 
         public static IServiceCollection AddPersistenceInfrastructure(

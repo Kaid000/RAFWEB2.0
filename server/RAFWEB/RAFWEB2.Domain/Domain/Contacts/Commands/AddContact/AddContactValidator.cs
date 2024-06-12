@@ -1,5 +1,4 @@
 ﻿using FluentValidation;
-using Microsoft.IdentityModel.Tokens;
 using RAFWEB2.Domain.Domain.Contacts.Commands.CreateContact;
 using RAFWEB2.Domain.Repositories.Interfaces;
 
@@ -29,6 +28,5 @@ namespace RAFWEB2.Domain.Domain.Contacts.Commands.AddContact
         {
             return phone.All(Char.IsDigit);
         }
-
     }
 }

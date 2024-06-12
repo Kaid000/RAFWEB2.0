@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Identity;
 using RAFWEB2.API.Configuration.Extentions;
 using RAFWEB2.Core.Context;
 using RAFWEB2.Domain.Domain.Achievement.Commands.AddAchievement;

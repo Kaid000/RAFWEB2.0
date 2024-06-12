@@ -1,7 +1,5 @@
 ﻿using AutoMapper;
 using MediatR;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using RAFWEB2.Data.Models;
 using RAFWEB2.Domain.Domain.Contacts.Commands.CreateContact;

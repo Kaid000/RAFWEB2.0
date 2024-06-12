@@ -3,8 +3,6 @@ using RAFWEB2.Domain.Repositories.Interfaces;
 
 namespace RAFWEB2.API.Configuration.Extentions
 {
-   
-    
         public static class RepositoriesExtention
         {
             public static void AddRepositoreis(this IServiceCollection services)
@@ -16,8 +14,6 @@ namespace RAFWEB2.API.Configuration.Extentions
             services.AddScoped<IMainPageRepository, MainPageRepository>();
             services.AddScoped<IHolidayRepository, HolidayRepository>();
             services.AddScoped<IOrganizationRepository, OrganizationRepository>();
-
-        }
-        }
-    
+            }
+   }
 }
