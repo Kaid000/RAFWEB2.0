@@ -2,14 +2,16 @@
 using RAFWEB2.Domain.Domain.Contacts.Commands.CreateContact;
 using RAFWEB2.Domain.Repositories.Interfaces;
 
-
 namespace RAFWEB2.Domain.Domain.Contacts.Commands.AddContact
 {
     public sealed class AddContactValidator : AbstractValidator<AddContactCommand>
     {
         public AddContactValidator(IContactInfoRepository repo)
         {
-            RuleFor(c => c.ContactInfo.Address).Cascade(CascadeMode.StopOnFirstFailure).MustAsync(async (Address, _) =>
+            ClassLevelCascadeMode = CascadeMode.Stop;
+            RuleLevelCascadeMode = CascadeMode.Stop;
+
+            RuleFor(c => c.ContactInfo.Address).MustAsync(async (Address, _) =>
             {
                 if (await repo.GetByAsync(c => c.Address == Address) == null)
                 {
@@ -19,9 +21,9 @@ namespace RAFWEB2.Domain.Domain.Contacts.Commands.AddContact
                 {
                     return true;
                 }
-            }).WithMessage("The Name must be unique");
+            }).WithMessage("The address must be unique");
 
-            RuleFor(c => c.ContactInfo.Phone).Cascade(CascadeMode.StopOnFirstFailure).NotNull().Length(12).Must(MustBeDigit);
+            RuleFor(c => c.ContactInfo.Phone).NotNull().Length(12).Must(MustBeDigit);
         }
 
         private bool MustBeDigit(string phone)

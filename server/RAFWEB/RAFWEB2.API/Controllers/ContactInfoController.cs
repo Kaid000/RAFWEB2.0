@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Infrastructure;
 using RAFWEB2.Data.Models;
 using RAFWEB2.Domain.Domain.Contacts.Commands.CreateContact;
 using RAFWEB2.Domain.Domain.Contacts.Commands.DeleteContact;
@@ -59,10 +60,15 @@ namespace RAFWEB2.API.Controllers
         /// <response code="403">Forbidden</response>
         /// <response code="500">Internal Server error</response>
         [HttpPost]
-        public async Task<ContactInfo> AddContact(ContactInfoDTO contact)
+        public async Task<IActionResult> AddContact(ContactInfoDTO contact)
         {
-            var mapcontact = _mapper.Map<ContactInfoDTO, ContactInfo>(contact);
-            return await _mediator.Send(new AddContactCommand(mapcontact));
+            if (ModelState.IsValid)
+            {
+                var mapcontact = _mapper.Map<ContactInfoDTO, ContactInfo>(contact);
+                var result = await _mediator.Send(new AddContactCommand(mapcontact));
+                return Ok(result);
+            }
+            return BadRequest(ModelState);
         }
 
         /// <summary>

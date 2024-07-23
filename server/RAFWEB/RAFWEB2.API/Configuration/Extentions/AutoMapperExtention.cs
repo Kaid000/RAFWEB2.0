@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using FluentValidation;
+using RAFWEB2.Data.Models;
+using RAFWEB2.Domain.Domain.Contacts.Commands.AddContact;
 using RAFWEB2.Domain.Mapping.Achievements;
 using RAFWEB2.Domain.Mapping.Contacts;
 using RAFWEB2.Domain.Mapping.Holidays;

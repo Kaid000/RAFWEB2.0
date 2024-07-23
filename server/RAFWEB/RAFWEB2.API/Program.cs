@@ -1,4 +1,3 @@
-using Microsoft.AspNetCore.Identity;
 using RAFWEB2.API.Configuration.Extentions;
 using RAFWEB2.Core.Context;
 using RAFWEB2.Domain.Domain.Achievement.Commands.AddAchievement;
@@ -31,8 +30,9 @@ using RAFWEB2.Domain.Domain.Organization.Commands.DeleteOrganization;
 using RAFWEB2.Domain.Domain.Organization.Commands.UpdateOrganization;
 using RAFWEB2.Domain.Domain.Organization.Queries.GetAllOrganization;
 using RAFWEB2.Domain.Domain.Organization.Queries.GetOrganizationById;
-
-
+using RAFWEB2.Domain.Domain.Contacts.Commands.AddContact;
+using FluentValidation.AspNetCore;
+using FluentValidation;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -77,9 +77,13 @@ builder.Services.AddMediatR(x =>
     x.RegisterServicesFromAssemblies(typeof(UpdateHolidayCommand).Assembly, typeof(UpdateHolidayCommandHandler).Assembly);
     x.RegisterServicesFromAssemblies(typeof(GetAllHolidayQuery).Assembly, typeof(GetAllHolidayQueryHandler).Assembly);
     x.RegisterServicesFromAssemblies(typeof(GetHolidayByIdQuery).Assembly, typeof(GetHolidayByIdQueryHandler).Assembly);
+
 });
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddAutoMapper();
+builder.Services.AddFluentValidationAutoValidation();
+builder.Services.AddFluentValidationClientsideAdapters();
+builder.Services.AddValidatorsFromAssemblyContaining<AddContactValidator>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
