@@ -33,6 +33,9 @@ using RAFWEB2.Domain.Domain.Organization.Queries.GetOrganizationById;
 using RAFWEB2.Domain.Domain.Contacts.Commands.AddContact;
 using FluentValidation.AspNetCore;
 using FluentValidation;
+using RAFWEB2.Domain.Domain.Holidays.Commands.AddHoliday;
+using RAFWEB2.Domain.Domain.News.Commands.AddArticle;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -77,13 +80,17 @@ builder.Services.AddMediatR(x =>
     x.RegisterServicesFromAssemblies(typeof(UpdateHolidayCommand).Assembly, typeof(UpdateHolidayCommandHandler).Assembly);
     x.RegisterServicesFromAssemblies(typeof(GetAllHolidayQuery).Assembly, typeof(GetAllHolidayQueryHandler).Assembly);
     x.RegisterServicesFromAssemblies(typeof(GetHolidayByIdQuery).Assembly, typeof(GetHolidayByIdQueryHandler).Assembly);
-
 });
 builder.Services.AddPersistenceInfrastructure(builder.Configuration);
 builder.Services.AddAutoMapper();
 builder.Services.AddFluentValidationAutoValidation();
 builder.Services.AddFluentValidationClientsideAdapters();
 builder.Services.AddValidatorsFromAssemblyContaining<AddContactValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<AddAchievementValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<AddHolidayValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<AddOrganizationValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<AddArticleValidator>();
+builder.Services.AddValidatorsFromAssemblyContaining<AddPageValidator>();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();

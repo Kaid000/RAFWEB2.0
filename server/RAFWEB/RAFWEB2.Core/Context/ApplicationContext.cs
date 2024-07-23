@@ -13,10 +13,10 @@ namespace RAFWEB2.Core.Context
         public DbSet<Holiday> Holidays { get; set; }
         public DbSet<MainPageContent> MainPages { get; set; }
         public DbSet<StudentOrganization> Organizations { get; set; }
+
         public ApplicationContext(DbContextOptions<ApplicationContext> options)
         : base(options)
         {
-
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -25,9 +25,9 @@ namespace RAFWEB2.Core.Context
 
             optionsBuilder.UseSqlServer();
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Achivement>().Property(b => b.Name).IsRequired();
@@ -46,7 +46,6 @@ namespace RAFWEB2.Core.Context
 
             modelBuilder.Entity<StudentOrganization>().Property(b => b.Id).IsRequired();
             modelBuilder.Entity<StudentOrganization>().Property(b => b.Name).IsRequired();
-
         }
     }
 }
